@@ -14,7 +14,7 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
-        env: 
+    env: 
       VUE_APP_ORDER_SERVICE_URL: https://orderservice-f6hdb5g2fna4dagr.canadacentral-01.azurewebsites.net/
       VUE_APP_PRODUCT_SERVICE_URL: https://productservice-efa4d0d6bgacc7hh.canadacentral-01.azurewebsites.net
     steps:
@@ -47,5 +47,6 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_SALMON_FOREST_09AE6B31E }}
           action: "close"
+
 
 
